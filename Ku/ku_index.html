@@ -58,7 +58,7 @@
             <input type="text" id="fullName" placeholder="Full Name  - ناوی تەواو " />
             <input type="number" id="age" placeholder="Age - تەمەن" min="1" />
             <select id="gender">
-                <option value="male" >نێر</option>
+                <option value="male">نێر</option>
                 <option value="female">مێ</option>
             </select>
 
@@ -79,12 +79,13 @@
 
         <div id="dateTimeDisplay"> کاتی ئێستا باردەکرێت...</div>
 
-        <button onclick="checkBP()"> پەستانی خوێن بپشکنە</button>
+        <button onclick="checkBP()" class="sound-Jazak"> پەستانی خوێن بپشکنە</button>
 
         <div id="result"></div>
 
         <!-- Danger buttons hidden by default -->
-        <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 ئێستا دەبێت چی بکەم؟</button>
+        <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 ئێستا دەبێت چی
+            بکەم؟</button>
         <!-- Add this div below the buttons -->
         <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
@@ -106,10 +107,11 @@
                 <li>پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات.</li>
             </ul>
         </div>
-        <button onclick="speakGuide()" id="speakButton" class="danger-btn" style="display:none;">🔊 ڕێنمایی دەنگی</button>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 ڕێنمایی
+            دەنگی</button>
 
-        <button onclick="downloadCSV()">📥 داگرتن CSV</button>
-        <button onclick="window.print()">🖨️ چاپکردنی ئەنجامەکان</button>
+        <button onclick="downloadCSV()" class="sound-Jazak">📥 داگرتن CSV</button>
+        <button onclick="window.print()" class="sound-Jazak">🖨️ چاپکردنی ئەنجامەکان</button>
 
         <div class="history">
             <h3>📜 دوایین 10 پشکنین:</h3>
@@ -117,7 +119,8 @@
         </div>
 
         <div class="description">
-            <strong>ڕێنمایی فشاری خوێن:</strong> مەودای ئاسایی بەپێی تەمەن و ڕەگەز دەگۆڕێت. گرنگە بە بەردەوامی پشکنین بکەیت و داوای ڕێنمایی پزیشکی بکەیت ئەگەر لە دەرەوەی ئەم مەودایەن.
+            <strong>ڕێنمایی فشاری خوێن:</strong> مەودای ئاسایی بەپێی تەمەن و ڕەگەز دەگۆڕێت. گرنگە بە بەردەوامی پشکنین
+            بکەیت و داوای ڕێنمایی پزیشکی بکەیت ئەگەر لە دەرەوەی ئەم مەودایەن.
         </div>
 
     </div>
@@ -257,13 +260,13 @@
             speakBtn.disabled = true;
 
             const guide = [
-                "ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.",
-                "هەر جلوبەرگێکی تەسک شل بکە.",
-                "هانی هەناسەی هێواش و قووڵ بدە.",
-                "ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.",
-                "کافاین و هاندەر مەدە.",
-                "ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.",
-                "پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات."
+                // "ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.",
+                // "هەر جلوبەرگێکی تەسک شل بکە.",
+                // "هانی هەناسەی هێواش و قووڵ بدە.",
+                // "ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.",
+                // "کافاین و هاندەر مەدە.",
+                // "ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.",
+                // "پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات."
             ];
             const speech = new SpeechSynthesisUtterance(guide.join(" "));
 
@@ -275,6 +278,53 @@
         }
 
     </script>
+
+
+    <!-- Sound effect for button click -->
+    <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+        preload="auto"></audio>
+    <!-- <button class="sound-Jazak">Click Me</button> -->
+    <script>
+        const buttonsJazak = document.querySelectorAll('.sound-Jazak');
+        const soundJazak = document.getElementById('click-Jazak');
+
+        buttonsJazak.forEach(button => {
+            button.addEventListener('click', () => {
+                soundJazak.currentTime = 0;
+                soundJazak.play();
+            });
+        });
+    </script>
+
+    <!-- Sound effect for button click -->
+    <audio id="click-Voice" src="../sound/ttsMP3.com_help.mp3" preload="auto"></audio>
+    <!-- <button class="Voice-Guidance">Click Me</button> -->
+    <script>
+    const buttons = document.querySelectorAll('.Voice-Guidance');
+  const sound = document.getElementById('click-Voice');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  });
+</script>
+
+    <!-- 
+ئارام بە و یارمەتی تاک بدە لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە هەر جلوبەرگێکی تەسک شل بکەوە. هاندانی هەناسەدانی هێواش و قووڵ. ئەگەر دەرسیان بۆ نووسراوە، دەرمانی فشاری خوێنی خێرا بەکار بهێنن. خۆت لە پێدانی کافاین و هاندەر بەدوور بگرە. دڵنیا بەوە لەوەی کە بەخەبەر دەمێننەوە و بە شێوەیەکی ڕاست دەمێننەوە. پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تاوەکو یارمەتی دێت.
+-->
+    <!--
+Stay calm and help the person sit comfortably.
+Loosen any tight clothing.
+Encourage slow, deep breaths.
+If prescribed, give emergency blood pressure medication.
+Do not give caffeine or stimulants.
+Keep them alert and seated upright.
+Call 911 and stay with them until help arrives. 
+ -->
+
+
 </body>
 
 </html>
