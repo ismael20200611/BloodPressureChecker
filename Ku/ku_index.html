@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku" dir="rtl">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blood Pressure Checker</title>
+    <title>سەرەتا</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <style>
 
     </style>
@@ -18,7 +18,7 @@
     <!-- Header with Logo -->
     <header>
         <nav>
-            <a href="#" class="logo"><img src="img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+            <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
             <!-- Hamburger toggle for mobile -->
             <div class="menu-toggle" onclick="toggleMenu()">
@@ -28,21 +28,21 @@
             </div>
 
             <ul id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="tools/producat.html">Producat</a></li>
-                <li><a href="tools/about.html">About</a></li>
-                <li><a href="tools/contact.html">Contact</a></li>
+                <li><a href="ku_index.html" class="active">سەرەتا</a></li>
+                <li><a href="ku_producat.html">بەرهەمهێنان</a></li>
+                <li><a href="ku_about.html">دەربارەی</a></li>
+                <li><a href="ku_contact.html">پەیوەندی</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Language ▼</a>
+                    <a href="#" class="dropbtn">زمان ▼</a>
                     <div class="dropdown-content">
-                        <a href="Ku/ku_index.html">Kurdish</a>
-                        <!-- <a href="ar/ar_index.html">Arabic</a>
-                        <a href="fr/fr_index.html">French</a>
-                        <a href="sp/sp_index.html">Spanish</a>
-                        <a href="po/po_index.html">Polish</a>
-                        <a href="it/it_index.html">Italian</a>
-                        <a href="ch/ch_index.html">Chinese</a>
-                        <a href="ge/ge_index.html">German</a> -->
+                        <a href="../index.html">ئینگلیزی</a>
+                        <!-- <a href="ar/ar_index.html">عەرەبی</a>
+                        <a href="fr/fr_index.html">فەرەنسی</a>
+                        <a href="sp/sp_index.html">ئیسپانی</a>
+                        <a href="po/po_index.html">پۆڵەندی</a>
+                        <a href="it/it_index.html">ئیتاڵی</a>
+                        <a href="ch/ch_index.html">چینی</a>
+                        <a href="ge/ge_index.html">ئەڵمانی</a> -->
                     </div>
                 </li>
             </ul>
@@ -51,21 +51,21 @@
     </header>
 
     <div class="container">
-        <h1>Blood Pressure Checker</h1>
-        <p>Check your blood pressure and get instant feedback.</p>
-        <p>Enter your details below:</p>
+        <h1>پشکنەری فشاری خوێن</h1>
+        <p>فشاری خوێنت بپشکنە و دەستبەجێ کاردانەوەی وەربگرن.</p>
+        <p>تکایە زانیارییەکانت لە خانەکانی خوارەوە بنووسە:</p>
         <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name" />
-            <input type="number" id="age" placeholder="Age" min="1" />
+            <input type="text" id="fullName" placeholder="Full Name  - ناوی تەواو " />
+            <input type="number" id="age" placeholder="Age - تەمەن" min="1" />
             <select id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="male" >نێر</option>
+                <option value="female">مێ</option>
             </select>
-            
+
         </div>
         <div class="product-list">
             <div class="product-item1">
-                <img src="img/device.png" alt="Product 1">
+                <img src="../img/device.png" alt="Product 1">
             </div>
             <div class="product-item2">
                 <div class="input-group">
@@ -77,17 +77,16 @@
         </div>
 
 
-            <div id="dateTimeDisplay"> Loading current time...</div>
+        <div id="dateTimeDisplay"> کاتی ئێستا باردەکرێت...</div>
 
-            <button onclick="checkBP()"> Check Blood Pressure</button>
+        <button onclick="checkBP()"> پەستانی خوێن بپشکنە</button>
 
-            <div id="result"></div>
+        <div id="result"></div>
 
-            <!-- Danger buttons hidden by default -->
-            <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 What to Do
-                Now?</button>
-            <!-- Add this div below the buttons -->
-            <div id="helpGuide" style="display:none; 
+        <!-- Danger buttons hidden by default -->
+        <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 ئێستا دەبێت چی بکەم؟</button>
+        <!-- Add this div below the buttons -->
+        <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
   max-width: 600px; 
   background: #fff3f3; 
@@ -95,42 +94,39 @@
   color: #a94442; 
   padding: 15px; 
   border-radius: 8px; 
-  text-align: left;">
-                <strong>🚨 What to Do Now?</strong>
-                <ul>
-                    <li>Stay calm and help the person sit comfortably.</li>
-                    <li>Loosen any tight clothing.</li>
-                    <li>Encourage slow, deep breaths.</li>
-                    <li>If prescribed, give emergency blood pressure medication.</li>
-                    <li>Do not give caffeine or stimulants.</li>
-                    <li>Keep them alert and seated upright.</li>
-                    <li>Call 911 and stay with them until help arrives.</li>
-                </ul>
-            </div>
-            <button onclick="speakGuide()" id="speakButton" class="danger-btn" style="display:none;">🔊 Voice
-                Guidance</button>
+  text-align: right;">
+            <strong>🚨 ئێستا دەبێت چی بکەم؟</strong>
+            <ul>
+                <li>ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.</li>
+                <li>هەر جلوبەرگێکی تەسک شل بکە.</li>
+                <li>هانی هەناسەی هێواش و قووڵ بدە.</li>
+                <li>ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.</li>
+                <li>کافاین و هاندەر مەدە.</li>
+                <li>ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.</li>
+                <li>پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات.</li>
+            </ul>
+        </div>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn" style="display:none;">🔊 ڕێنمایی دەنگی</button>
 
-            <button onclick="downloadCSV()">📥 Download CSV</button>
-            <button onclick="window.print()">🖨️ Print Results</button>
+        <button onclick="downloadCSV()">📥 داگرتن CSV</button>
+        <button onclick="window.print()">🖨️ چاپکردنی ئەنجامەکان</button>
 
-            <div class="history">
-                <h3>📜 Last 10 Checks:</h3>
-                <ul id="historyList"></ul>
-            </div>
+        <div class="history">
+            <h3>📜 دوایین 10 پشکنین:</h3>
+            <ul id="historyList"></ul>
+        </div>
 
-            <div class="description">
-                <strong>Blood Pressure Guide:</strong> Normal range varies by age and gender. Check regularly and
-                consult a
-                doctor if outside range.
-            </div>
-        
+        <div class="description">
+            <strong>ڕێنمایی فشاری خوێن:</strong> مەودای ئاسایی بەپێی تەمەن و ڕەگەز دەگۆڕێت. گرنگە بە بەردەوامی پشکنین بکەیت و داوای ڕێنمایی پزیشکی بکەیت ئەگەر لە دەرەوەی ئەم مەودایەن.
+        </div>
+
     </div>
     <!-- Footer -->
     <footer>
-        <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
-        <p>Last updated: June 2025</p>
-        &copy; <a class="border-bottom" href="index.html">Blood Pressure Checker</a>, All Right Reserved.
-        Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+        <p>دروستکراوە لەلایەن <a href="https://ismael-software.vercel.app/" target="_blank"> نوێژیان </a></p>
+        <p>دوایین نوێکردنەوە: حوزەیرانی 2025</p>
+        &copy; <a class="border-bottom" href="ku_index.html">پشکنەری فشاری خوێن</a>, هەموو مافەکان پارێزراون.
+        دیزاین کراوە لەلایەن <a class="border-bottom" href="https://ismael-software.vercel.app/"> نوێژیان </a>
         </p>
     </footer>
 
@@ -165,7 +161,7 @@
 
             // Validate inputs
             if (!fullName || isNaN(sys) || isNaN(dia) || isNaN(pulse) || isNaN(age)) {
-                result.textContent = "Please complete all fields correctly.";
+                result.textContent = "تکایە هەموو خانەکان بە دروستی تەواو بکە.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -182,22 +178,22 @@
             let normal = (sys >= 90 && sys <= 130) && (dia >= 60 && dia <= 85);
 
             if (dangerHigh) {
-                result.textContent = "❗ Dangerously High! Call 911 immediately!";
+                result.textContent = "❗ بە شێوەیەکی مەترسیدار! دەستبەجێ پەیوەندی بە 911 بکە!";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (dangerLow) {
-                result.textContent = "❗ Dangerously Low! Seek medical attention.";
+                result.textContent = "❗ بەشێوەیەکی مەترسیدار! تکایە بەدوای چاودێری پزیشکیدا بگەڕێن.";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (!normal) {
-                result.textContent = "⚠️ BP slightly outside normal range.";
+                result.textContent = "⚠️ پەستانی خوێن کەمێک لە ئاستی ئاسایی دوورە";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
             } else {
-                result.textContent = "✅ Blood Pressure is within normal range.";
+                result.textContent = "✅ پەستانی خوێن لە مەودای ئاساییدایە.";
                 result.className = 'normal';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -261,13 +257,13 @@
             speakBtn.disabled = true;
 
             const guide = [
-                "Stay calm and help the person sit comfortably.",
-                "Loosen any tight clothing.",
-                "Encourage slow, deep breaths.",
-                "If prescribed, give emergency blood pressure medication.",
-                "Do not give caffeine or stimulants.",
-                "Keep them alert and seated upright.",
-                "Call 911 and stay with them until help arrives."
+                "ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.",
+                "هەر جلوبەرگێکی تەسک شل بکە.",
+                "هانی هەناسەی هێواش و قووڵ بدە.",
+                "ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.",
+                "کافاین و هاندەر مەدە.",
+                "ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.",
+                "پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات."
             ];
             const speech = new SpeechSynthesisUtterance(guide.join(" "));
 
