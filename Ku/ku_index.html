@@ -84,7 +84,7 @@
         <div id="result"></div>
 
         <!-- Danger buttons hidden by default -->
-        <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 ئێستا دەبێت چی
+        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 ئێستا دەبێت چی
             بکەم؟</button>
         <!-- Add this div below the buttons -->
         <div id="helpGuide" style="display:none; 
@@ -114,7 +114,7 @@
         <button onclick="window.print()" class="sound-Jazak">🖨️ چاپکردنی ئەنجامەکان</button>
 
         <div class="history">
-            <h3>📜 دوایین 10 پشکنین:</h3>
+            <h3>📜 دوایین 100 پشکنین:</h3>
             <ul id="historyList"></ul>
         </div>
 
@@ -207,7 +207,7 @@
         function saveHistory(entry) {
             let history = JSON.parse(localStorage.getItem("bpHistory")) || [];
             history.unshift(entry);
-            history = history.slice(0, 10);
+            history = history.slice(0, 100);
             localStorage.setItem("bpHistory", JSON.stringify(history));
             displayHistory();
         }

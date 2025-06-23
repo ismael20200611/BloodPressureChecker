@@ -79,12 +79,12 @@
 
             <div id="dateTimeDisplay"> Loading current time...</div>
 
-            <button onclick="checkBP()"> Check Blood Pressure</button>
+            <button onclick="checkBP()" class="sound-Jazak"> Check Blood Pressure</button>
 
             <div id="result"></div>
 
             <!-- Danger buttons hidden by default -->
-            <button onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 What to Do
+            <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 What to Do
                 Now?</button>
             <!-- Add this div below the buttons -->
             <div id="helpGuide" style="display:none; 
@@ -110,11 +110,11 @@
             <button onclick="speakGuide()" id="speakButton" class="danger-btn" style="display:none;">🔊 Voice
                 Guidance</button>
 
-            <button onclick="downloadCSV()">📥 Download CSV</button>
-            <button onclick="window.print()">🖨️ Print Results</button>
+            <button  class="sound-Jazak" onclick="downloadCSV()">📥 Download CSV</button>
+            <button  class="sound-Jazak" onclick="window.print()">🖨️ Print Results</button>
 
             <div class="history">
-                <h3>📜 Last 10 Checks:</h3>
+                <h3>📜 Last 100 Checks:</h3>
                 <ul id="historyList"></ul>
             </div>
 
@@ -208,7 +208,7 @@
         function saveHistory(entry) {
             let history = JSON.parse(localStorage.getItem("bpHistory")) || [];
             history.unshift(entry);
-            history = history.slice(0, 10);
+            history = history.slice(0, 100);
             localStorage.setItem("bpHistory", JSON.stringify(history));
             displayHistory();
         }
@@ -279,6 +279,23 @@
         }
 
     </script>
+
+    <!-- Sound effect for button click -->
+    <audio id="click-Jazak" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+        preload="auto"></audio>
+    <!-- <button class="sound-Jazak">Click Me</button> -->
+    <script>
+        const buttonsJazak = document.querySelectorAll('.sound-Jazak');
+        const soundJazak = document.getElementById('click-Jazak');
+
+        buttonsJazak.forEach(button => {
+            button.addEventListener('click', () => {
+                soundJazak.currentTime = 0;
+                soundJazak.play();
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
