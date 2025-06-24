@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>سەرەتا</title>
+    <title>الرئيسية</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
@@ -28,21 +28,21 @@
             </div>
 
             <ul id="navLinks">
-                <li><a href="ku_index.html" class="active">سەرەتا</a></li>
-                <li><a href="ku_product.html">بەرهەمهێنان</a></li>
-                <li><a href="ku_about.html">دەربارەی</a></li>
-                <li><a href="ku_contact.html">پەیوەندی</a></li>
+                <li><a href="ar_index.html" class="active">الرئيسية</a></li>
+                <li><a href="ar_product.html">منتج</a></li>
+                <li><a href="ar_about.html">عن</a></li>
+                <li><a href="ar_contact.html">اتصال</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">زمان ▼</a>
+                    <a href="#" class="dropbtn">اللغه ▼</a>
                     <div class="dropdown-content">
-                        <a href="../index.html">ئینگلیزی</a>
-                        <a href="ar/ar_index.html">عەرەبی</a>
-                        <!-- <a href="fr/fr_index.html">فەرەنسی</a>
-                        <a href="sp/sp_index.html">ئیسپانی</a>
-                        <a href="po/po_index.html">پۆڵەندی</a>
-                        <a href="it/it_index.html">ئیتاڵی</a>
-                        <a href="ch/ch_index.html">چینی</a>
-                        <a href="ge/ge_index.html">ئەڵمانی</a> -->
+                        <a href="../index.html">الإنجليزية</a>
+                        <a href="../Ku/ku_index.html">الكردية</a>
+                        <!-- <a href="../fr/fr_index.html">فرنسي</a>
+                        <a href="../sp/sp_index.html">الأسبانية</a>
+                        <a href="../po/po_index.html">البولندية</a>
+                        <a href="../it/it_index.html">إيطالي</a>
+                        <a href="../ch/ch_index.html">الصينية</a>
+                        <a href="../ge/ge_index.html">الألمانية</a> -->
                     </div>
                 </li>
             </ul>
@@ -51,15 +51,15 @@
     </header>
 
     <div class="container">
-        <h1>پشکنەری فشاری خوێن</h1>
-        <p>فشاری خوێنت بپشکنە و دەستبەجێ کاردانەوەی وەربگرن.</p>
-        <p>تکایە زانیارییەکانت لە خانەکانی خوارەوە بنووسە:</p>
+        <h1>جهاز قياس ضغط الدم</h1>
+        <p>تحقق من ضغط دمك واحصل على تعليقات فورية.</p>
+        <p>أدخل تفاصيلك أدناه:</p>
         <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name  - ناوی تەواو " />
-            <input type="number" id="age" placeholder="Age - تەمەن" min="1" />
+            <input type="text" id="fullName" placeholder="Full Name  - الاسم الكامل " />
+            <input type="number" id="age" placeholder="Age - عمر" min="1" />
             <select id="gender">
-                <option value="male">نێر</option>
-                <option value="female">مێ</option>
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
             </select>
 
         </div>
@@ -77,15 +77,14 @@
         </div>
 
 
-        <div id="dateTimeDisplay"> کاتی ئێستا باردەکرێت...</div>
+        <div id="dateTimeDisplay">جارٍ تحميل الوقت الحالي...</div>
 
-        <button onclick="checkBP()" class="sound-Jazak"> پەستانی خوێن بپشکنە</button>
+        <button onclick="checkBP()" class="sound-Jazak">تحقق من ضغط الدم</button>
 
         <div id="result"></div>
 
         <!-- Danger buttons hidden by default -->
-        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 ئێستا دەبێت چی
-            بکەم؟</button>
+        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 ماذا تفعل الآن؟</button>
         <!-- Add this div below the buttons -->
         <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
@@ -96,40 +95,37 @@
   padding: 15px; 
   border-radius: 8px; 
   text-align: right;">
-            <strong>🚨 ئێستا دەبێت چی بکەم؟</strong>
+            <strong>🚨 ماذا تفعل الآن؟</strong>
             <ul>
-                <li>ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.</li>
-                <li>هەر جلوبەرگێکی تەسک شل بکەوە.</li>
-                <li>هانی هەناسەی هێواش و قووڵ بدە.</li>
-                <li>ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.</li>
-                <li>کافاین و هاندەر مەدە.</li>
-                <li>ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.</li>
-                <li>پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات.</li>
+                <li>ابق هادئًا وساعد الشخص على الجلوس بشكل مريح.</li>
+                <li>افتح أي ملابس ضيقة.</li>
+                <li>شجع على التنفس البطيء والعميق.</li>
+                <li>إذا تم وصفه، قدم دواء ضغط الدم الطارئ.</li>
+                <li>لا تعطي الكافيين أو المنبهات.</li>
+                <li>ابقهم متيقظين وجالسين بشكل مستقيم.</li>
+                <li>اتصل بالشرطة على الرقم 911 وابق معهم حتى وصول المساعدة.</li>
             </ul>
         </div>
-        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 ڕێنمایی
-            دەنگی</button>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 إرشادات الصوت</button>
 
-        <button onclick="downloadCSV()" class="sound-Jazak">📥 داگرتن CSV</button>
-        <button onclick="window.print()" class="sound-Jazak">🖨️ چاپکردنی ئەنجامەکان</button>
+        <button onclick="downloadCSV()" class="sound-Jazak">📥 تنزيل ملف CSV</button>
+        <button onclick="window.print()" class="sound-Jazak">🖨️ طباعة النتائج</button>
 
         <div class="history">
-            <h3>📜 دوایین 100 پشکنین:</h3>
+            <h3>📜 آخر 100 تحقق:</h3>
             <ul id="historyList"></ul>
         </div>
 
         <div class="description">
-            <strong>ڕێنمایی فشاری خوێن:</strong> مەودای ئاسایی بەپێی تەمەن و ڕەگەز دەگۆڕێت. گرنگە بە بەردەوامی پشکنین
-            بکەیت و داوای ڕێنمایی پزیشکی بکەیت ئەگەر لە دەرەوەی ئەم مەودایەن.
+            <strong>دليل ضغط الدم:</strong> تتفاوت النطاقات الطبيعية حسب العمر والجنس. تحقق بانتظام واستشر طبيبًا إذا كنت خارج النطاق.
         </div>
 
     </div>
     <!-- Footer -->
     <footer>
-        <p>دروستکراوە لەلایەن <a href="https://ismael-software.vercel.app/" target="_blank"> نوێژیان </a></p>
-        <p>دوایین نوێکردنەوە: حوزەیرانی 2025</p>
-        &copy; <a class="border-bottom" href="ku_index.html">پشکنەری فشاری خوێن</a>, هەموو مافەکان پارێزراون.
-        دیزاین کراوە لەلایەن <a class="border-bottom" href="https://ismael-software.vercel.app/"> نوێژیان </a>
+        <p>أنشأ بواسطة <a href="https://ismael-software.vercel.app/" target="_blank"> نويزيان </a></p>
+        <p>آخر تحديث: يونيو 2025</p>
+        &copy; <a class="border-bottom" href="ku_index.html">جهاز قياس ضغط الدم</a>, جميع الحقوق محفوظة.صمم بواسطة<a class="border-bottom" href="https://ismael-software.vercel.app/"> نويزيان </a>
         </p>
     </footer>
 
@@ -164,7 +160,7 @@
 
             // Validate inputs
             if (!fullName || isNaN(sys) || isNaN(dia) || isNaN(pulse) || isNaN(age)) {
-                result.textContent = "تکایە هەموو خانەکان بە دروستی تەواو بکە.";
+                result.textContent = "يرجى ملء جميع الحقول بشكل صحيح.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -181,22 +177,22 @@
             let normal = (sys >= 90 && sys <= 130) && (dia >= 60 && dia <= 85);
 
             if (dangerHigh) {
-                result.textContent = "❗ بە شێوەیەکی مەترسیدار! دەستبەجێ پەیوەندی بە 911 بکە!";
+                result.textContent = "❗ خطر مرتفع للغاية! اتصل بالشرطة على الفور!";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (dangerLow) {
-                result.textContent = "❗ بەشێوەیەکی مەترسیدار! تکایە بەدوای چاودێری پزیشکیدا بگەڕێن.";
+                result.textContent = "❗ منخفض بشكل خطير! اطلب المساعدة الطبية.";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (!normal) {
-                result.textContent = "⚠️ پەستانی خوێن کەمێک لە ئاستی ئاسایی دوورە";
+                result.textContent = "⚠️ ضغط الدم خارج المعدل الطبيعي قليلاً.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
             } else {
-                result.textContent = "✅ پەستانی خوێن لە مەودای ئاساییدایە.";
+                result.textContent = "✅ ضغط الدم في النطاق الطبيعي.";
                 result.className = 'normal';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -260,13 +256,16 @@
             speakBtn.disabled = true;
 
             const guide = [
-                // "ئارام بمێننەوە و یارمەتی کەسەکە بدەن لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە.",
-                // "هەر جلوبەرگێکی تەسک شل بکە.",
-                // "هانی هەناسەی هێواش و قووڵ بدە.",
-                // "ئەگەر دەرمانی فشاری خوێنی فریاکەوتن بەکار بهێنیت.",
-                // "کافاین و هاندەر مەدە.",
-                // "ئاگاداریان بکەرەوە و بە ڕێکوپێکی دابنیشن.",
-                // "پەیوەندی بە 911 بکە و لەگەڵیان بمێنەرەوە تا یارمەتی دەگات."
+
+                // "إذا كان ضغط الدم مرتفعًا جدًا، اتصل بالشرطة على الرقم 911.",
+                // "إذا كان ضغط الدم منخفضًا جدًا، اتصل بطبيبك.",
+                // "ابق هادئًا وساعد الشخص على الجلوس بشكل مريح.",
+                // "افتح أي ملابس ضيقة.",
+                // "شجع على التنفس البطيء والعميق.",
+                // "إذا تم وصفه، قدم دواء ضغط الدم الطارئ.",
+                // "لا تعطي الكافيين أو المنبهات.",
+                // "ابقهم متيقظين وجالسين بشكل مستقيم."
+
             ];
             const speech = new SpeechSynthesisUtterance(guide.join(" "));
 
@@ -310,20 +309,6 @@
     });
   });
 </script>
-
-    <!-- 
-ئارام بە و یارمەتی تاک بدە لە دۆزینەوەی شوێنێکی دانیشتنی ئاسوودە هەر جلوبەرگێکی تەسک شل بکەوە. هاندانی هەناسەدانی هێواش و قووڵ. ئەگەر دەرسیان بۆ نووسراوە، دەرمانی فشاری خوێنی خێرا بەکار بهێنن.هەندە کافاین یان هاندەر نەپێشنیار بکە. بەرز زەحمەتی بکە کە هەوەر بەرز دەشینیتەوە و نیشتەجێی ڕاست نەکا. پەیوەندی بەرەو 911 بکە و لەگەڵیان بمێنە تا یارمەتی دێت.-->
-
-    <!--
-Stay calm and help the person sit comfortably.
-Loosen any tight clothing.
-Encourage slow, deep breaths.
-If prescribed, give emergency blood pressure medication.
-Do not give caffeine or stimulants.
-Keep them alert and seated upright.
-Call 911 and stay with them until help arrives. 
- -->
-
 
 </body>
 
