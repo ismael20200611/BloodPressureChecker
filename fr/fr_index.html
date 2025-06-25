@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blood Pressure Checker</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <style>
 
     </style>
@@ -18,7 +18,7 @@
     <!-- Header with Logo -->
     <header>
         <nav>
-            <a href="#" class="logo"><img src="img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+            <a href="#" class="logo"><img src="../img/logo.PNG" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
             <!-- Hamburger toggle for mobile -->
             <div class="menu-toggle" onclick="toggleMenu()">
@@ -28,21 +28,21 @@
             </div>
 
             <ul id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="tools/product.html">Product</a></li>
-                <li><a href="tools/about.html">About</a></li>
-                <li><a href="tools/contact.html">Contact</a></li>
+                <li><a href="fr_index.html" class="active">Maison</a></li>
+                <li><a href="fr_product.html">Produire</a></li>
+                <li><a href="fr_about.html">À propos</a></li>
+                <li><a href="fr_contact.html">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">Language ▼</a>
+                    <a href="#" class="dropbtn">Langue ▼</a>
                     <div class="dropdown-content">
-                        <a href="Ku/ku_index.html">Kurdish</a>
-                        <a href="ar/ar_index.html">Arabic</a>
-                        <a href="fr/fr_index.html">French</a>
-                        <a href="sp/sp_index.html">Spanish</a>
-                        <a href="po/po_index.html">Polish</a>
-                        <a href="it/it_index.html">Italian</a>
-                        <a href="ch/ch_index.html">Chinese</a>
-                        <a href="ge/ge_index.html">German</a>
+                        <a href="../index.html">Anglais</a>
+                        <a href="../Ku/ku_index.html">Kurde</a>
+                        <a href="../ar/ar_index.html">Arabe</a>
+                        <a href="../sp/sp_index.html">Espagnole</a>
+                        <a href="../po/po_index.html">polonais</a>
+                        <a href="../it/it_index.html">Italienne</a>
+                        <a href="../ch/ch_index.html">Chinoise</a>
+                        <a href="../ge/ge_index.html">Allemande</a>
                     </div>
                 </li>
             </ul>
@@ -50,22 +50,22 @@
         </nav>
     </header>
 
-    <div class="container">
+   <div class="container">
         <h1>Blood Pressure Checker</h1>
         <p>Check your blood pressure and get instant feedback.</p>
         <p>Enter your details below:</p>
         <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name" />
-            <input type="number" id="age" placeholder="Age" min="1" />
+            <input type="text" id="fullName" placeholder="Full Name  - Full Name " />
+            <input type="number" id="age" placeholder="Age - age" min="1" />
             <select id="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
             </select>
-            
+
         </div>
         <div class="product-list">
             <div class="product-item1">
-                <img src="img/device.png" alt="Product 1">
+                <img src="../img/device.png" alt="Product 1">
             </div>
             <div class="product-item2">
                 <div class="input-group">
@@ -77,17 +77,17 @@
         </div>
 
 
-            <div id="dateTimeDisplay"> Loading current time...</div>
+        <div id="dateTimeDisplay"> Loading current time...</div>
 
-            <button onclick="checkBP()" class="sound-Jazak"> Check Blood Pressure</button>
+        <button onclick="checkBP()" class="sound-Jazak"> Check Blood Pressure</button>
 
-            <div id="result"></div>
+        <div id="result"></div>
 
-            <!-- Danger buttons hidden by default -->
-            <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨 What to Do
+        <!-- Danger buttons hidden by default -->
+        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 What to Do
                 Now?</button>
-            <!-- Add this div below the buttons -->
-            <div id="helpGuide" style="display:none; 
+        <!-- Add this div below the buttons -->
+        <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
   max-width: 600px; 
   background: #fff3f3; 
@@ -95,32 +95,33 @@
   color: #a94442; 
   padding: 15px; 
   border-radius: 8px; 
-  text-align: left;">
-                <strong>🚨 What to Do Now?</strong>
-                <ul>
-                    <li>Stay calm and help the person sit comfortably.</li>
-                    <li>Loosen any tight clothing.</li>
-                    <li>Encourage slow, deep breaths.</li>
-                    <li>If prescribed, give emergency blood pressure medication.</li>
-                    <li>Do not give caffeine or stimulants.</li>
-                    <li>Keep them alert and seated upright.</li>
-                    <li>Call 911 and stay with them until help arrives.</li>
-                </ul>
-            </div>
-            <button onclick="speakGuide()" id="speakButton" class="danger-btn" style="display:none;">🔊 Voice Guidance</button>
+  text-align: right;">
+            <strong>🚨 What to Do Now?</strong>
+            <ul>
+                <li>Stay calm and help the person sit comfortably.</li>
+                <li>Loosen any tight clothing.</li>
+                <li>Encourage slow, deep breaths.</li>
+                <li>If prescribed, give emergency blood pressure medication.</li>
+                <li>Do not give caffeine or stimulants.</li>
+                <li>Keep them alert and seated upright.</li>
+                <li>Call 911 and stay with them until help arrives.</li>
+            </ul>
+        </div>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 Voice Guidance</button>
 
-            <button  class="sound-Jazak" onclick="downloadCSV()">📥 Download CSV</button>
-            <button  class="sound-Jazak" onclick="window.print()">🖨️ Print Results</button>
+        <button onclick="downloadCSV()" class="sound-Jazak">📥 Download CSV</button>
+        <button onclick="window.print()" class="sound-Jazak">🖨️ Print Results</button>
 
-            <div class="history">
-                <h3>📜 Last 100 Checks:</h3>
-                <ul id="historyList"></ul>
-            </div>
+        <div class="history">
+            <h3>📜 Last 100 Checks:</h3>
+            <ul id="historyList"></ul>
+        </div>
 
-            <div class="description">
-            <strong>Blood Pressure Guide:</strong> Normal range varies by age and gender. Check regularly and consult a doctor if outside range.
-            </div>
-        
+        <div class="description">
+         <strong>Blood Pressure Guide:</strong> Normal range varies by age and gender. Check regularly and consult a doctor if outside range.
+        </div>
+
+    </div>
     </div>
     <!-- Footer -->
     <footer>
@@ -258,13 +259,7 @@
             speakBtn.disabled = true;
 
             const guide = [
-                "Stay calm and help the person sit comfortably.",
-                "Loosen any tight clothing.",
-                "Encourage slow, deep breaths.",
-                "If prescribed, give emergency blood pressure medication.",
-                "Do not give caffeine or stimulants.",
-                "Keep them alert and seated upright.",
-                "Call 911 and stay with them until help arrives."
+                
             ];
             const speech = new SpeechSynthesisUtterance(guide.join(" "));
 
@@ -277,8 +272,9 @@
 
     </script>
 
+
     <!-- Sound effect for button click -->
-    <audio id="click-Jazak" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
+    <audio id="click-Jazak" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"
         preload="auto"></audio>
     <!-- <button class="sound-Jazak">Click Me</button> -->
     <script>
@@ -292,6 +288,22 @@
             });
         });
     </script>
+
+    <!-- Sound effect for button click -->
+    <audio id="click-Voice" src="../sound/ttsMP3.com_help.mp3" preload="auto"></audio>
+    <!-- <button class="Voice-Guidance">Click Me</button> -->
+    <script>
+    const buttons = document.querySelectorAll('.Voice-Guidance');
+  const sound = document.getElementById('click-Voice');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play();
+    });
+  });
+</script>
+
     
 </body>
 
