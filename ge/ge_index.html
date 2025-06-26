@@ -51,15 +51,15 @@
     </header>
 
     <div class="container">
-        <h1>Blood Pressure Checker</h1>
-        <p>Check your blood pressure and get instant feedback.</p>
-        <p>Enter your details below:</p>
+        <h1>Blutdruckmessgerät</h1>
+        <p>Überprüfen Sie Ihren Blutdruck und erhalten Sie sofortiges Feedback.</p>
+        <p>Geben Sie Ihre Daten unten ein:</p>
         <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name  - Full Name " />
-            <input type="number" id="age" placeholder="Age - age" min="1" />
+            <input type="text" id="fullName" placeholder="Full Name  - Vollständiger Name " />
+            <input type="number" id="age" placeholder="Age - Alter" min="1" />
             <select id="gender">
-                <option value="male">male</option>
-                <option value="female">female</option>
+                <option value="male">männlich</option>
+                <option value="female">weiblich</option>
             </select>
 
         </div>
@@ -77,16 +77,15 @@
         </div>
 
 
-        <div id="dateTimeDisplay"> Loading current time...</div>
+        <div id="dateTimeDisplay"> Aktuelle Uhrzeit wird geladen...</div>
 
-        <button onclick="checkBP()" class="sound-Jazak"> Check Blood Pressure</button>
+        <button onclick="checkBP()" class="sound-Jazak"> Überprüfen Sie den Blutdruck</button>
 
         <div id="result"></div>
 
         <!-- Danger buttons hidden by default -->
         <button class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;">🚨
-            What to Do
-            Now?</button>
+           Was ist jetzt zu tun?</button>
         <!-- Add this div below the buttons -->
         <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
@@ -97,31 +96,29 @@
   padding: 15px; 
   border-radius: 8px; 
   text-align: right;">
-            <strong>🚨 What to Do Now?</strong>
+            <strong>🚨 Was ist jetzt zu tun?</strong>
             <ul>
-                <li>Stay calm and help the person sit comfortably.</li>
-                <li>Loosen any tight clothing.</li>
-                <li>Encourage slow, deep breaths.</li>
-                <li>If prescribed, give emergency blood pressure medication.</li>
-                <li>Do not give caffeine or stimulants.</li>
-                <li>Keep them alert and seated upright.</li>
-                <li>Call 911 and stay with them until help arrives.</li>
+                <li>Bleiben Sie ruhig und helfen Sie der Person, bequem zu sitzen.</li>
+                <li>Lockern Sie enge Kleidung.</li>
+                <li>Ermutigen Sie zu langsamen, tiefen Atemzügen.</li>
+                <li>Wenn verschrieben, geben Sie das Notfall-Blutdruckmedikament.</li>
+                <li>Geben Sie kein Koffein oder Stimulanzien.</li>
+                <li>Halten Sie sie wachsam und aufrecht sitzen.</li>
+                <li>Rufen Sie 911 an und bleiben Sie bei ihnen, bis Hilfe eintrifft.</li>
             </ul>
         </div>
-        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 Voice
-            Guidance</button>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 Sprachausgabe</button>
 
-        <button onclick="downloadCSV()" class="sound-Jazak">📥 Download CSV</button>
-        <button onclick="window.print()" class="sound-Jazak">🖨️ Print Results</button>
+        <button onclick="downloadCSV()" class="sound-Jazak">📥 Herunterladen CSV</button>
+        <button onclick="window.print()" class="sound-Jazak">🖨️ Druckergebnisse</button>
 
         <div class="history">
-            <h3>📜 Last 100 Checks:</h3>
+            <h3>📜 Letzte 100 Prüfungen:</h3>
             <ul id="historyList"></ul>
         </div>
 
         <div class="description">
-            <strong>Blood Pressure Guide:</strong> Normal range varies by age and gender. Check regularly and consult a
-            doctor if outside range.
+            <strong>Blutdruckleitfaden:</strong> Der Normalbereich variiert je nach Alter und Geschlecht. Regelmäßig überprüfen und einen Arzt konsultieren, wenn der Bereich überschritten wird.
         </div>
 
     </div>
@@ -210,7 +207,7 @@
 
             // Validate inputs
             if (!fullName || isNaN(sys) || isNaN(dia) || isNaN(pulse) || isNaN(age)) {
-                result.textContent = "Please complete all fields correctly.";
+                result.textContent = "Bitte füllen Sie alle Felder korrekt aus.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -227,29 +224,29 @@
             let normal = (sys >= 90 && sys <= 130) && (dia >= 60 && dia <= 85);
 
             if (dangerHigh) {
-                result.textContent = "❗ Dangerously High! Call 911 immediately!";
+                result.textContent = "❗ Gefährlich hoch! Rufen Sie sofort 911 an!";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (dangerLow) {
-                result.textContent = "❗ Dangerously Low! Seek medical attention.";
+                result.textContent = "❗ Gefährlich niedrig! Suchen Sie medizinische Hilfe.";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (!normal) {
-                result.textContent = "⚠️ BP slightly outside normal range.";
+                result.textContent = "⚠️ Der Blutdruck liegt leicht außerhalb des normalen Bereichs.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
             } else {
-                result.textContent = "✅ Blood Pressure is within normal range.";
+                result.textContent = "✅ Der Blutdruck liegt im normalen Bereich.";
                 result.className = 'normal';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
             }
         }
 
-        // Save to localStorage and keep only last 10
+        // Save to localStorage and keep only last 100
         function saveHistory(entry) {
             let history = JSON.parse(localStorage.getItem("bpHistory")) || [];
             history.unshift(entry);

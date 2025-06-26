@@ -51,15 +51,15 @@
     </header>
 
    <div class="container">
-        <h1>Blood Pressure Checker</h1>
-        <p>Check your blood pressure and get instant feedback.</p>
-        <p>Enter your details below:</p>
+        <h1>Contrôleur de la pression artérielle</h1>
+        <p>Vérifiez votre pression artérielle et obtenez des retours instantanés.</p>
+        <p>Entrez vos informations ci-dessous :</p>
         <div class="top-group">
-            <input type="text" id="fullName" placeholder="Full Name  - Full Name " />
-            <input type="number" id="age" placeholder="Age - age" min="1" />
+            <input type="text" id="fullName" placeholder="Full Name  - Nom Complet " />
+            <input type="number" id="age" placeholder="Age - âge" min="1" />
             <select id="gender">
-                <option value="male">male</option>
-                <option value="female">female</option>
+                <option value="male">mâle</option>
+                <option value="female">femme</option>
             </select>
 
         </div>
@@ -77,15 +77,14 @@
         </div>
 
 
-        <div id="dateTimeDisplay"> Loading current time...</div>
+        <div id="dateTimeDisplay"> Chargement de l'heure actuelle...</div>
 
-        <button onclick="checkBP()" class="sound-Jazak"> Check Blood Pressure</button>
+        <button onclick="checkBP()" class="sound-Jazak"> Vérifier la pression artérielle</button>
 
         <div id="result"></div>
 
         <!-- Danger buttons hidden by default -->
-        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 What to Do
-                Now?</button>
+        <button  class="sound-Jazak" onclick="showHelp()" id="helpButton" class="danger-btn" style="display:none;" >🚨 Que faire maintenant ??</button>
         <!-- Add this div below the buttons -->
         <div id="helpGuide" style="display:none; 
   margin-top: 15px; 
@@ -96,29 +95,29 @@
   padding: 15px; 
   border-radius: 8px; 
   text-align: right;">
-            <strong>🚨 What to Do Now?</strong>
+            <strong>🚨 Que faire maintenant ?</strong>
             <ul>
-                <li>Stay calm and help the person sit comfortably.</li>
-                <li>Loosen any tight clothing.</li>
-                <li>Encourage slow, deep breaths.</li>
-                <li>If prescribed, give emergency blood pressure medication.</li>
-                <li>Do not give caffeine or stimulants.</li>
-                <li>Keep them alert and seated upright.</li>
-                <li>Call 911 and stay with them until help arrives.</li>
+                <li>Restez calme et aidez la personne à s'asseoir confortablement.</li>
+                <li>Détendez tout vêtement trop serré.</li>
+                <li>Encouragez des respirations lentes et profondes.</li>
+                <li>Si prescrit, administrer un médicament d'urgence pour la pression artérielle.</li>
+                <li>Ne pas donner de caféine ni de stimulants.</li>
+                <li>Gardez-les alertes et assis bien droits.</li>
+                <li>Appelez le 911 et restez avec eux jusqu'à l'arrivée de l'aide.</li>
             </ul>
         </div>
-        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 Voice Guidance</button>
+        <button onclick="speakGuide()" id="speakButton" class="danger-btn Voice-Guidance" style="display:none;">🔊 Guidage Vocal</button>
 
-        <button onclick="downloadCSV()" class="sound-Jazak">📥 Download CSV</button>
-        <button onclick="window.print()" class="sound-Jazak">🖨️ Print Results</button>
+        <button onclick="downloadCSV()" class="sound-Jazak">📥 Télécharger CSV</button>
+        <button onclick="window.print()" class="sound-Jazak">🖨️ Imprimer les résultats</button>
 
         <div class="history">
-            <h3>📜 Last 100 Checks:</h3>
+            <h3>📜 Derniers 100 contrôles :</h3>
             <ul id="historyList"></ul>
         </div>
 
         <div class="description">
-         <strong>Blood Pressure Guide:</strong> Normal range varies by age and gender. Check regularly and consult a doctor if outside range.
+         <strong>Guide de la pression artérielle:</strong> La plage normale varie en fonction de l'âge et du sexe. Vérifiez régulièrement et consultez un médecin si vous êtes en dehors de la plage.
         </div>
 
     </div>
@@ -197,7 +196,7 @@
 
             // Validate inputs
             if (!fullName || isNaN(sys) || isNaN(dia) || isNaN(pulse) || isNaN(age)) {
-                result.textContent = "Please complete all fields correctly.";
+                result.textContent = "Veuillez remplir tous les champs correctement.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
@@ -214,22 +213,22 @@
             let normal = (sys >= 90 && sys <= 130) && (dia >= 60 && dia <= 85);
 
             if (dangerHigh) {
-                result.textContent = "❗ Dangerously High! Call 911 immediately!";
+                result.textContent = "❗ Danger de mort ! Appelez le 911 immédiatement !";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (dangerLow) {
-                result.textContent = "❗ Dangerously Low! Seek medical attention.";
+                result.textContent = "❗ Extrêmement bas ! Consultez un médecin.";
                 result.className = 'danger';
                 helpBtn.style.display = 'inline-block';
                 speakBtn.style.display = 'inline-block';
             } else if (!normal) {
-                result.textContent = "⚠️ BP slightly outside normal range.";
+                result.textContent = "⚠️ La pression artérielle est légèrement en dehors de la plage normale.";
                 result.className = 'danger';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
             } else {
-                result.textContent = "✅ Blood Pressure is within normal range.";
+                result.textContent = "✅ La pression artérielle est dans la normale.";
                 result.className = 'normal';
                 helpBtn.style.display = 'none';
                 speakBtn.style.display = 'none';
